@@ -1,11 +1,15 @@
 <div class="container">
 
   <div class="content">
-    <%= @content.html_safe %>
+    <%= @project.as_html %>
     <div class="content__actions">
-      <a href="#" class="content__actions__version content__actions__version--active">v1.0</a>
-      <a href="#" class="content__actions__version">v0.9</a>
-      <a href="#" class="content__actions__version">v0.8</a>
+      <% @project.versions.each do |version|%>
+        <%
+          klass = version == params[:version] ? "content__actions__version" : "content__actions__version content__actions__version--active"
+        %>
+        <%= link_to version, "/projects/" + @project.url_for_version(version), class: klass
+        %>
+      <% end %>
     </div>
   </div>
 
@@ -13,7 +17,7 @@
     <h3>Table of contents</h3>
 
     <ul class="sidebar__nav">
-      <% @headers.each do |header| %>
+      <% @project.headers.each do |header| %>
         <li class="sidebar__nav__item">
         <% if header.is_a?(Array) %>
           <ul class="sidebar__nav">

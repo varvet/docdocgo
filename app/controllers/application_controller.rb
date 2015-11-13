@@ -6,23 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def project
-    client   = Hurley::Client.new("https://raw.githubusercontent.com")
-    response = client.get("#{params[:organization]}/#{params[:project]}/#{params[:version]}/README.md?foo")
-    renderer = HTMLwithRouge.new(with_toc_data: true)
-    markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
-    @content = markdown.render(response.body)
-    html = Nokogiri::HTML(@content)
-    @headers = html.css("h2, h3, h4, h5").reduce([]) do |arr, node|
-      if node.name == "h2"
-        arr << node.text
-      else
-        if arr.last.is_a?(Array)
-          arr.last << node.text
-        else
-          arr << [node.text]
-        end
-      end
-      arr
-    end
+    @project = Project.new(params[:organization],
+                           params[:project],
+                           params[:version])
   end
 end
