@@ -14,6 +14,7 @@ gem "nokogiri"
 gem "hurley"
 gem "redcarpet"
 gem "pry"
+gem "rouge"
 
 group :development, :test do
   gem "byebug"
