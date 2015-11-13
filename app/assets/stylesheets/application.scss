@@ -79,6 +79,29 @@ pre {
   padding-right: 2rem;
 }
 
+// TODO: horrible hack
+.content__actions {
+  bottom: 0;
+  position: fixed;
+  background: #fff;
+  width: 660px;
+  padding: 1rem 0;
+  font-size: .9em;
+  border-top: 1px solid $color-offwhite;
+}
+
+.content__actions__version {
+  border: 1px solid #ddd;
+  padding: .25rem 1rem;
+  border-radius: 4px;
+  color: #999;
+}
+
+.content__actions__version--active {
+  color: $color-offblack;
+  border-color: #999;
+}
+
 .sidebar {
   width: 20rem;
   padding: 1rem 2rem;
