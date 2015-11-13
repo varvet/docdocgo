@@ -12,7 +12,7 @@ class Project
   end
 
   def versions
-    ["master", "v1.0.0", "v0.12.4", "v0.9.0", "v0.0.2"]
+    ["docdocgo", "v1.0.0", "v0.12.4", "v0.9.0", "v0.0.2"]
   end
 
   def url_for_version(version)
