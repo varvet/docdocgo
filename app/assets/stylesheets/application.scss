@@ -17,6 +17,7 @@
 
 $color-offblack: #333;
 $color-offwhite: #eee;
+$color-blue: #0275d8;
 
 html {
   box-sizing: border-box;
@@ -32,7 +33,7 @@ html {
 html {
   color: $color-offblack;
   font-family: 'Lato', sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
@@ -43,11 +44,12 @@ body {
 }
 
 a {
-  color: $color-offblack;
+  color: $color-blue;
   text-decoration: none;
 }
 
 img {
+  display: none;
   max-width: 100%;
 }
 
