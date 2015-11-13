@@ -29,14 +29,17 @@ html {
   box-sizing: inherit;
 }
 
-body {
+html {
   color: $color-offblack;
-  display: flex;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+  line-height: 1.5;
+}
+
+body {
+  display: flex;
   height: 100%;
   justify-content: center;
-  line-height: 1.6;
 }
 
 a {
@@ -90,7 +93,8 @@ pre {
   line-height: 2;
 
   .sidebar__nav__item {
-    padding-left: 1.5rem;
+    font-size: .85rem;
+    padding-left: 1rem;
   }
 
   a {
