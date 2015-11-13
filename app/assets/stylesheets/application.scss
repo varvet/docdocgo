@@ -77,6 +77,7 @@ pre {
   flex: 1;
   overflow: scroll;
   padding-right: 2rem;
+  margin-bottom: 57px; // TODO: horrible hack
 }
 
 // TODO: horrible hack
@@ -86,6 +87,7 @@ pre {
   background: #fff;
   width: 660px;
   padding: 1rem 0;
+  padding-right: 1rem;
   font-size: .9em;
   border-top: 1px solid $color-offwhite;
 }
@@ -100,6 +102,11 @@ pre {
 .content__actions__version--active {
   color: $color-offblack;
   border-color: #999;
+}
+
+.content__actions__scroll {
+  float: right;
+  color: #999;
 }
 
 .sidebar {
