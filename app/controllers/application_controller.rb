@@ -4,5 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def project
+    client   = Hurley::Client.new("https://raw.githubusercontent.com")
+    response = client.get("#{params[:organization]}/#{params[:project]}/master/README.md")
+    renderer = Redcarpet::Render::HTML.new
+    markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
+    @content = markdown.render(response.body)
   end
 end
