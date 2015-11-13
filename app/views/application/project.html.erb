@@ -8,58 +8,19 @@
     <h3>Table of contents</h3>
 
     <ul class="sidebar__nav">
-      <li class="sidebar__nav__item">
-        <a href="#authentication">Authentication</a>
-        <ul class="sidebar__nav">
-          <li class="sidebar__nav__item"><a href="#built-in-authentication">Built in authentication</a></li>
-          <li class="sidebar__nav__item"><a href="#shared-authentication">Shared authentication</a></li>
-        </ul>
-      </li>
-      <li class="sidebar__nav__item"><a href="#authorization">Authorization</a></li>
-      <li class="sidebar__nav__item"><a href="#localization">Localization</a></li>
-      <li class="sidebar__nav__item"><a href="#javascript">JavaScript</a></li>
-      <li class="sidebar__nav__item"><a href="#plugins">Plugins</a></li>
-      <li class="sidebar__nav__item"><a href="#contributors">Contributors</a></li>
-      <li class="sidebar__nav__item"><a href="#license">License</a></li>
-      <li class="sidebar__nav__item">
-        <a href="#authentication">Authentication</a>
-        <ul class="sidebar__nav">
-          <li class="sidebar__nav__item"><a href="#built-in-authentication">Built in authentication</a></li>
-          <li class="sidebar__nav__item"><a href="#shared-authentication">Shared authentication</a></li>
-        </ul>
-      </li>
-      <li class="sidebar__nav__item"><a href="#authorization">Authorization</a></li>
-      <li class="sidebar__nav__item"><a href="#localization">Localization</a></li>
-      <li class="sidebar__nav__item"><a href="#javascript">JavaScript</a></li>
-      <li class="sidebar__nav__item"><a href="#plugins">Plugins</a></li>
-      <li class="sidebar__nav__item"><a href="#contributors">Contributors</a></li>
-      <li class="sidebar__nav__item"><a href="#license">License</a></li>
-      <li class="sidebar__nav__item">
-        <a href="#authentication">Authentication</a>
-        <ul class="sidebar__nav">
-          <li class="sidebar__nav__item"><a href="#built-in-authentication">Built in authentication</a></li>
-          <li class="sidebar__nav__item"><a href="#shared-authentication">Shared authentication</a></li>
-        </ul>
-      </li>
-      <li class="sidebar__nav__item"><a href="#authorization">Authorization</a></li>
-      <li class="sidebar__nav__item"><a href="#localization">Localization</a></li>
-      <li class="sidebar__nav__item"><a href="#javascript">JavaScript</a></li>
-      <li class="sidebar__nav__item"><a href="#plugins">Plugins</a></li>
-      <li class="sidebar__nav__item"><a href="#contributors">Contributors</a></li>
-      <li class="sidebar__nav__item"><a href="#license">License</a></li>
-      <li class="sidebar__nav__item">
-        <a href="#authentication">Authentication</a>
-        <ul class="sidebar__nav">
-          <li class="sidebar__nav__item"><a href="#built-in-authentication">Built in authentication</a></li>
-          <li class="sidebar__nav__item"><a href="#shared-authentication">Shared authentication</a></li>
-        </ul>
-      </li>
-      <li class="sidebar__nav__item"><a href="#authorization">Authorization</a></li>
-      <li class="sidebar__nav__item"><a href="#localization">Localization</a></li>
-      <li class="sidebar__nav__item"><a href="#javascript">JavaScript</a></li>
-      <li class="sidebar__nav__item"><a href="#plugins">Plugins</a></li>
-      <li class="sidebar__nav__item"><a href="#contributors">Contributors</a></li>
-      <li class="sidebar__nav__item"><a href="#license">License</a></li>
+      <% @headers.each do |header| %>
+        <li class="sidebar__nav__item">
+        <% if header.is_a?(Array) %>
+          <ul class="sidebar__nav">
+            <% header.each do |header| %>
+              <li class="sidebar__nav__item"><a href="#<%= header.parameterize %>"><%= header %></a></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <a href="#<%= header.parameterize %>"><%= header %></a>
+        <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
