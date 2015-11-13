@@ -1,15 +1,12 @@
 <div class="container">
-
   <div class="content">
     <%= @project.as_html %>
     <div class="content__actions">
       <% @project.versions.each do |version|%>
-        <%
-          klass = version == params[:version] ? "content__actions__version" : "content__actions__version content__actions__version--active"
-        %>
-        <%= link_to version, "/projects/" + @project.url_for_version(version), class: klass
-        %>
+        <% klass = version == params[:version] ? "content__actions__version" : "content__actions__version content__actions__version--active" %>
+        <%= link_to version, "/projects/" + @project.url_for_version(version), class: klass %>
       <% end %>
+      <a href="#godmin" class="content__actions__scroll">Scroll to top</a>
     </div>
   </div>
 
