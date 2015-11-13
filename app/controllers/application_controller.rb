@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def project
     client   = Hurley::Client.new("https://raw.githubusercontent.com")
-    response = client.get("#{params[:organization]}/#{params[:project]}/docdocgo/README.md?foo")
+    response = client.get("#{params[:organization]}/#{params[:project]}/#{params[:version]}/README.md?foo")
     renderer = HTMLwithRouge.new(with_toc_data: true)
     markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
     @content = markdown.render(response.body)

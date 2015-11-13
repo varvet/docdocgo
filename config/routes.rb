@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  # /projects/varvet/godmin
-  get "projects/:organization/:project", to: "application#project"
+  get "projects/:organization/:project", to: redirect("projects/%{organization}/%{project}/master")
+  get "projects/:organization/:project/:version", to: "application#project", constraints: { version: /[^\/]+/ }
 end
