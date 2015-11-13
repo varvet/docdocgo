@@ -13,7 +13,9 @@
         <% if header.is_a?(Array) %>
           <ul class="sidebar__nav">
             <% header.each do |header| %>
-              <li class="sidebar__nav__item"><a href="#<%= header.parameterize %>"><%= header %></a></li>
+              <li class="sidebar__nav__item">
+                <a href="#<%= header.parameterize %>"><%= header %></a>
+              </li>
             <% end %>
           </ul>
         <% else %>
