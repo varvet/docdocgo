@@ -1,0 +1,33 @@
+.aside {
+  border-left: 1px solid $color-offwhite;
+  height: 100%;
+  margin-left: $content-width;
+  overflow-y: scroll;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 25rem;
+}
+
+.aside__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aside__nav__item {
+  line-height: 2;
+
+  .aside__nav__item {
+    font-size: .85rem;
+    padding-left: 1rem;
+  }
+
+  a {
+    color: #999;
+
+    &:hover {
+      color: $color-offblack;
+    }
+  }
+}

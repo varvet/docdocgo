@@ -1,0 +1,22 @@
+.content {
+  padding-right: 2rem;
+  width: $content-width;
+
+  img {
+    display: none;
+  }
+
+  code,
+  pre {
+    background: #f8f8f8;
+    border-radius: 4px;
+  }
+
+  code {
+    padding: .1rem;
+  }
+
+  pre {
+    padding: .5rem;
+  }
+}
