@@ -1,6 +1,8 @@
 <div class="container">
   <div class="content">
+    <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
     <%= @project.as_html %>
+    <!--
     <div class="content__actions">
       <% @project.versions.each do |version|%>
         <% klass = version == params[:version] ? "content__actions__version content__actions__version--active" : "content__actions__version" %>
@@ -8,18 +10,19 @@
       <% end %>
       <a href="#godmin" class="content__actions__scroll">Scroll to top</a>
     </div>
+    -->
   </div>
 
-  <div class="sidebar">
+  <div class="aside">
     <h3>Table of contents</h3>
 
-    <ul class="sidebar__nav">
+    <ul class="aside__nav">
       <% @project.headers.each do |header| %>
-        <li class="sidebar__nav__item">
+        <li class="aside__nav__item">
         <% if header.is_a?(Array) %>
-          <ul class="sidebar__nav">
+          <ul class="aside__nav">
             <% header.each do |header| %>
-              <li class="sidebar__nav__item">
+              <li class="aside__nav__item">
                 <a href="#<%= header.parameterize %>"><%= header %></a>
               </li>
             <% end %>
