@@ -8,8 +8,10 @@
 
   code,
   pre {
-    background: #f8f8f8;
+    // background: #f8f8f8;
+    background: $color-offwhite;
     border-radius: 4px;
+    font-family: 'Inconsolata', monospace;
   }
 
   code {
